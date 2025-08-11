@@ -14,13 +14,52 @@
 
     <script>
 
+        // Getting reference to the div with an id: container
         const container = document.querySelector('#container');
 
+        // Create a new div element 
         const content = document.createElement('div');
         content.classList.add('content');
         content.textContent = "This is the glorious TEXT-CONTENT!";
 
+        // Create a new paragraph with red text saying 'Hey, I'm red!
+        const paragraph = document.createElement('p');
+        paragraph.classList.add('mainPara');
+        paragraph.textContent = `Hey, I'm red!`;
+        paragraph.style.color = 'red';
+
+        // Create a h3 with blue text that say's "I'm a blue h3!";
+        const head3 = document.createElement('h3');
+        head3.classList.add('heading3');
+        head3.textContent = "I'm a blue h3!";
+        head3.style.color = 'blue';
+
+        // a <div> with a black border and pink background color with 
+        // the following elements inside of it:
+
+        const innerDiv = document.createElement('div');
+        innerDiv.classList.add('inner');
+        innerDiv.setAttribute('style', 'border-color: black; background-color: pink');
+        
+        // Create inner H1
+        const innerH1 = document.createElement('h1');
+        innerH1.classList.add('innerH1');
+        innerH1.textContent = "I'm in a div";
+
+        // Create inner <p>
+        const innerP = document.createElement('p');
+        innerP.textContent = 'ME TOO!';
+
+        // append in innerDiv
+        innerDiv.appendChild(innerH1);
+        innerDiv.appendChild(innerP);
+
+
         container.appendChild(content);
+        container.appendChild(paragraph);
+        container.appendChild(head3);
+        container.appendChild(innerDiv);
+        
 
 
         // <script src="js-file.js" defer> </scrip t>: 
