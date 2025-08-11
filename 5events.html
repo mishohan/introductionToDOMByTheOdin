@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="5styles.css">
+</head>
+<body>
+
+    <!--Method 1: Specifying Function attribute directly on HTML Elements-->
+    <button onclick="alert('Hello World!')">Click Me!</button>
+
+<br>
+
+    <!--Method 2: Set properties in the form of on<eventType>,
+        such as onclick or onmousedown, on the DOM nodes in JavaScript.-->
+    <button id="btn1">Click Me!</button>
+
+<br>
+
+    <!--Method 3: Attach event listeners to the DOM nodes in JavaScript.-->
+    <button id="btn2">Click Me!</button>
+
+
+
+    <script>
+
+        // Method 2:
+        const btn1 = document.querySelector('#btn1');
+        btn1.onclick = () => alert('Hello World, Again!');
+        
+        // Method 3:
+        const btn2 = document.querySelector('#btn2');
+        btn2.addEventListener('click', () => {
+            alert('Hello world for the last time!');
+        })
+
+    </script>
+
+
+</body>
+</html>

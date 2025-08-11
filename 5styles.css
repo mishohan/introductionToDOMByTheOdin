@@ -1,0 +1,13 @@
+button{
+    font-family: monospace;
+    font-size: 1.5rem;
+    background-color: hsl(225, 73%, 55%); 
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+button:hover{
+    background-color: hsl(225, 73%, 45%);
+}
