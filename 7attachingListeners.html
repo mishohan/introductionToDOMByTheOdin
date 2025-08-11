@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attaching Listeners to groups of nodes</title>
+    <link rel="stylesheet" href="5styles.css">
+</head>
+<body>
+    <div id="container">
+        <button id="one">Click Me</button><br>
+        <button id="two">Click Me</button><br>
+        <button id="three">Click Me</button><br>
+    </div>
+
+
+    <script>
+
+        //buttons is a node list. It looks and acts much like an array.
+        const button = document.querySelectorAll('button');
+
+        // We use the .forEach() method to iterate through each button
+        button.forEach((button) => {
+            button.addEventListener('click', () => {
+                alert(button.id);
+            });
+        });
+
+    </script>
+</body>
+</html>
