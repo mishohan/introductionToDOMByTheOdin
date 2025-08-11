@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example on Event 2</title>
+    <link rel="stylesheet" href="5styles.css">
+</head>
+<body>
+    <!--Method 1-->
+    <button onclick="alertFunction()">CLICK ME BABY</button>
+<br>
+    <!--Method 2-->
+    <button id="btn1">CLICK ME BABY</button>
+<br>
+    <!--Method 3-->
+    <button id="btn2">CLICK ME BABY</button>
+
+    <script>
+        // Method 1, 2 & 3
+        function alertFunction(){
+            alert("YAY! YOU DID IT!");
+        }
+
+        // Method 2 & 3
+        const btn1 = document.querySelector('#btn1');
+        const btn2 = document.querySelector('#btn2');
+
+        // Method 2
+        btn1.onclick = alertFunction;
+
+        // Method 3
+        btn2.addEventListener('click', alertFunction);
+
+        
+
+        // We can access more information about the event by passing
+        // a paramenter to the function that we are calling.
+
+        btn1.addEventListener('click', function(e){
+            console.log(e);
+        });
+
+        btn2.addEventListener('click', function(e){
+            console.log(e.target);
+        });
+
+        btn2.addEventListener('click', function(e){
+            e.target.style.background = 'black';
+        });
+
+    </script>
+</body>
+</html>
