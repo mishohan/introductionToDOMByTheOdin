@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Methods</title>
+</head>
+<body>
+    <script>
+
+        // A. QUERY SELECTORS 
+
+        // element.querySelector(selector)
+        // element.querySelectorAll(selector): return value is not an Array, but a 'NodeList'.
+        // if problem arise convert NodeList into an array using 1. Array.from() 2. ... (spread operator)
+
+
+        // B. ELEMENT CREATION
+
+        // document.createElement(tagName, [options]); [options] means using a function as a parameter
+        const div = document.createElement('div');
+
+        // We can place the newly created div into the DOM using
+
+        // 1. Append Elements
+        // parentNode.appendChild(childNode); // appends childNode as the last child of the parentNode.
+        // parentNode.insertBefore(newNode, referenceNode); // Inserts newNode into parentNode before referenceNode.
+
+        // 2. Remove Elements
+        // parentNode.removeChild(child); // Removes child from parentNode on the DOM and returns a reference to child.
+
+
+        // C. ALTERING ELEMENTS
+
+        // const div = document.createElement('div'); // we already decleared once
+        // Adding Inline Styles
+
+        // adds the indicated style rule to the element in the div variable
+        div.style.color = 'blue';
+
+        // adds several style rules
+        div.style.cssText = 'color: blue; background: white;';
+
+        // adds several style rules
+
+        div.setAttribute('style', 'color: blue; background: white;');
+
+        // When accessing a kebab-cased CSS property like background-color
+        
+        // dotNotation with camelCase
+        div.style.backgroundColor;
+
+        // bracket notation with kebab-case:
+        div.style["background-color"]; // not recommended
+
+        // bracket notation with camelCase:
+        div.style['backgroundColor'];
+
+        // Editing Attributes
+
+        // if id exists, update it to 'theDiv', else create an id with value "theDiv"
+        div.setAttribute('id', 'theDiv');
+        
+        // returns value of specified attribute, in this case "theDiv"
+        div.getAttribute('id');
+
+        // removes specified attribute
+        div.removeAttribute('id');
+
+
+        // D. WORKING WITH CLASSES
+
+        // adds class 'new' to new div
+        div.classList.add('new');
+
+        // removes 'new' class from div
+        div.classList.remove('new');
+
+        // if div doesn't have class 'active' then add it, or if it does, then removes it
+        div.classList.toggle('active'); // in this case adding a new class ; recommended to use toggle rather than add or removing class
+
+        
+        // ADDING TEXT CONTENT
+        // creates a text node and inserts it in div
+        div.textContent = 'Hello, World!';
+
+        // ADDING HTML CONTENT
+        // renders the HTML inside div
+        div.innerHTML = "<span>Hello, World!</span>";
+
+
+
+    </script>
+</body>
+</html>
